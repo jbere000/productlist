@@ -6,10 +6,12 @@ import {LOCALE_ID} from '@angular/core';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import { WelcomeComponent } from './home/welcome.component';
-import {RouterModule} from '@angular/router';
-import { PagenotfoundComponent } from './home/pagenotfound.component';
 import { ProductModule } from './product-list/product.module';
+import { WelcomeComponent } from './home/welcome.component';
+import { PagenotfoundComponent } from './home/pagenotfound.component';
+import { ProductListRoutingModule } from './product-list/product-list-routing.module';
+import { ProductDetailComponent } from './product-list/product-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
 registerLocaleData(localeEs);
 @NgModule({
   declarations: [
@@ -21,12 +23,9 @@ registerLocaleData(localeEs);
     BrowserModule,
     HttpClientModule,
     ProductModule,
+    ProductListRoutingModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', component: PagenotfoundComponent }
-    ])
+
   ],
   providers: [{
     provide: LOCALE_ID,
