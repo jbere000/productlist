@@ -10,8 +10,6 @@ import { ProductModule } from './product-list/product.module';
 import { WelcomeComponent } from './home/welcome.component';
 import { PagenotfoundComponent } from './home/pagenotfound.component';
 import { ProductListRoutingModule } from './product-list/product-list-routing.module';
-import { ProductDetailComponent } from './product-list/product-detail.component';
-import { ProductListComponent } from './product-list/product-list.component';
 registerLocaleData(localeEs);
 @NgModule({
   declarations: [
